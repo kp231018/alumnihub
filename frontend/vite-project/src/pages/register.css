@@ -1,0 +1,781 @@
+/* ===================================
+   CSS Variables - Color Palette
+   =================================== */
+   :root {
+    --ink-black: #0d1b2a;
+    --prussian-blue: #1b263b;
+    --dusk-blue: #415a77;
+    --dusty-denim: #778da9;
+    --alabaster-grey: #e0e1dd;
+    --white: #ffffff;
+    --error-red: #ef4444;
+    --success-green: #10b981;
+  }
+  
+  /* ===================================
+     Registration Page Layout - Split Screen
+     =================================== */
+  .register-page {
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    overflow: hidden;
+  }
+  
+  /* ===================================
+     Left Section - Branding
+     =================================== */
+  .register-branding {
+    flex: 0 0 45%;
+    background: linear-gradient(135deg, var(--prussian-blue) 0%, var(--dusk-blue) 100%);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Decorative Background Circles */
+  .circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: float 20s ease-in-out infinite;
+  }
+  
+  .circle-1 {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -150px;
+    animation-delay: 0s;
+  }
+  
+  .circle-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 7s;
+  }
+  
+  .circle-3 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 14s;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-30px) scale(1.05);
+    }
+  }
+  
+  .branding-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    animation: fadeInLeft 0.8s ease;
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .branding-logo {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+    transition: transform 0.3s ease;
+  }
+  
+  .branding-logo:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Branding Features */
+  .branding-features {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    flex-wrap: wrap;
+  }
+  
+  .feature-badge {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .feature-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  /* Colored Feature Badges */
+  .feature-network {
+    background: #fbbf24;
+    border-color: #fbbf24;
+    color: var(--white);
+  }
+  
+  .feature-network:hover {
+    background: #f59e0b;
+    border-color: #f59e0b;
+  }
+  
+  .feature-jobs {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: var(--white);
+  }
+  
+  .feature-jobs:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+  }
+  
+  .feature-events {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: var(--white);
+  }
+  
+  .feature-events:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+  }
+  
+  .branding-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+  }
+  
+  .branding-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--alabaster-grey);
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+  }
+  
+  .branding-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .feature-badge {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .feature-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  /* ===================================
+     Right Section - Registration Form
+     =================================== */
+  .register-form-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: var(--alabaster-grey);
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  /* Glassmorphism Registration Card */
+  .register-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(13, 27, 42, 0.15);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* ===================================
+     Registration Header
+     =================================== */
+  .register-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .register-title-form {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--prussian-blue);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .register-subtitle {
+    font-size: 1rem;
+    color: var(--dusty-denim);
+    font-weight: 500;
+  }
+  
+  /* ===================================
+     Role Badge
+     =================================== */
+  .role-badge {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: linear-gradient(135deg, rgba(27, 38, 59, 0.1) 0%, rgba(65, 90, 119, 0.1) 100%);
+    color: var(--prussian-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(27, 38, 59, 0.2);
+  }
+  
+  /* ===================================
+     Form Styles
+     =================================== */
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .field-row {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .field-row.two > * {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+  
+  .input-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--prussian-blue);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .input-control {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid rgba(27, 38, 59, 0.15);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--ink-black);
+    transition: all 0.3s ease;
+    font-family: inherit;
+    outline: none;
+    width: 100%;
+  }
+  
+  .input-control::placeholder {
+    color: var(--dusty-denim);
+    opacity: 0.6;
+  }
+  
+  .input-control:focus {
+    border-color: var(--prussian-blue);
+    box-shadow: 0 0 0 4px rgba(27, 38, 59, 0.08), 0 4px 12px rgba(27, 38, 59, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .input-control:hover:not(:focus) {
+    border-color: var(--dusty-denim);
+  }
+  
+  .input-control.input-error {
+    border-color: var(--error-red);
+    background: rgba(239, 68, 68, 0.03);
+  }
+  
+  .input-error {
+    font-size: 0.85rem;
+    color: var(--error-red);
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .input-error::before {
+    content: '⚠';
+  }
+  
+  /* Select Styling */
+  select.input-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23415a77' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.2rem center;
+    background-size: 16px;
+    padding-right: 3rem;
+    cursor: pointer;
+  }
+  
+  /* File Input Styling */
+  .file-input {
+    position: relative;
+  }
+  
+  .file-input .input-control {
+    padding: 1rem;
+    border: 2px dashed rgba(27, 38, 59, 0.15);
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .file-input .input-control:hover {
+    border-color: var(--dusty-denim);
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .file-input .input-control:focus {
+    border-style: solid;
+    border-color: var(--prussian-blue);
+  }
+  
+  /* ===================================
+     Password Checklist
+     =================================== */
+  .password-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .pass-item {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .pass-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  
+  .pass-item.ok {
+    color: var(--success-green);
+    background: rgba(16, 185, 129, 0.05);
+  }
+  
+  .pass-item.bad {
+    color: var(--dusty-denim);
+    background: rgba(119, 141, 169, 0.05);
+  }
+  
+  /* ===================================
+     Divider
+     =================================== */
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dusty-denim), transparent);
+    opacity: 0.3;
+  }
+  
+  .divider-text {
+    padding: 0 1.5rem;
+    color: var(--dusty-denim);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  /* ===================================
+     Success Message
+     =================================== */
+  .success-msg {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success-green);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--success-green);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .success-msg::before {
+    content: '✓';
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* ===================================
+     Register Submit Button
+     =================================== */
+  .btn-register-submit {
+    width: 100%;
+    padding: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--prussian-blue) 0%, var(--dusk-blue) 100%);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .btn-register-submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .btn-register-submit:hover:not(:disabled)::before {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .btn-register-submit:hover:not(:disabled) {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(27, 38, 59, 0.4);
+  }
+  
+  .btn-register-submit:active:not(:disabled) {
+    transform: translateY(-1px) scale(0.98);
+  }
+  
+  .btn-register-submit:disabled {
+    background: linear-gradient(135deg, var(--dusty-denim), var(--alabaster-grey));
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+  }
+  
+  /* ===================================
+     Login Link
+     =================================== */
+  .link-row {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(27, 38, 59, 0.1);
+  }
+  
+  .muted {
+    color: var(--dusty-denim);
+    font-size: 0.95rem;
+  }
+  
+  .link-row a {
+    color: var(--prussian-blue);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .link-row a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--prussian-blue);
+    transition: width 0.3s ease;
+  }
+  
+  .link-row a:hover::after {
+    width: 100%;
+  }
+  
+  /* ===================================
+     Small Note Text
+     =================================== */
+  .small-note {
+    font-size: 0.85rem;
+    color: var(--dusty-denim);
+    line-height: 1.5;
+    margin-top: 0.5rem;
+  }
+  
+  .small-note a {
+    color: var(--prussian-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .small-note a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ===================================
+     Keyboard Focus Styles
+     =================================== */
+  .input-control:focus-visible,
+  select:focus-visible,
+  button:focus-visible {
+    outline: 3px solid var(--prussian-blue);
+    outline-offset: 2px;
+  }
+  
+  a:focus-visible {
+    outline: 2px solid var(--prussian-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  
+  /* ===================================
+     Responsive Design
+     =================================== */
+  @media (max-width: 1024px) {
+    .register-page {
+      flex-direction: column;
+    }
+  
+    .register-branding {
+      flex: 0 0 auto;
+      min-height: 40vh;
+      padding: 3rem 2rem;
+    }
+  
+    .branding-title {
+      font-size: 2.5rem;
+    }
+  
+    .branding-description {
+      font-size: 1rem;
+    }
+  
+    .register-form-section {
+      flex: 1;
+      padding: 2rem;
+    }
+  
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .circle-2 {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .circle-3 {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .field-row.two {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+  
+    .register-branding {
+      min-height: 35vh;
+      padding: 2.5rem 1.5rem;
+    }
+  
+    .branding-logo {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .branding-title {
+      font-size: 2rem;
+    }
+  
+    .branding-description {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+  
+    .branding-features {
+      gap: 0.75rem;
+    }
+  
+    .feature-badge {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.85rem;
+    }
+  
+    .register-form-section {
+      padding: 1.5rem 1rem;
+    }
+  
+    .register-card {
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+    }
+  
+    .register-title-form {
+      font-size: 1.9rem;
+    }
+  
+    .register-subtitle {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .register-branding {
+      min-height: 30vh;
+      padding: 2rem 1.25rem;
+    }
+  
+    .branding-logo {
+      font-size: 1.75rem;
+    }
+  
+    .branding-title {
+      font-size: 1.75rem;
+    }
+  
+    .branding-description {
+      font-size: 0.9rem;
+    }
+  
+    .register-card {
+      padding: 2rem 1.5rem;
+      border-radius: 18px;
+    }
+  
+    .register-title-form {
+      font-size: 1.65rem;
+    }
+  
+    .input-control {
+      padding: 0.9rem 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .btn-register-submit {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* ===================================
+     Smooth Page Transitions
+     =================================== */
+  .register-page {
+    animation: pageLoad 0.5s ease;
+  }
+  
+  @keyframes pageLoad {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
