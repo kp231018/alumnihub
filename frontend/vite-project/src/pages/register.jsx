@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import './register.css';
+import '../styles/register.css';
 
 const JOB_TITLES = [
   'Software Engineer', 'Data Scientist', 'Product Manager', 'DevOps Engineer', 'SRE', 'QA Engineer', 'UI/UX Designer', 'Other'
