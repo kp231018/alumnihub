@@ -10,8 +10,8 @@ const Home = () => {
         <div className="nav-container">
           <div className="logo">AlumniHub</div>
           <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#events">Events</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/events">Events</Link></li>
             <li><a href="#jobs">Jobs</a></li>
             <li><a href="#donate">Donate</a></li>
             <li><a href="#about">About</a></li>

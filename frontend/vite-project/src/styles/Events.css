@@ -1,0 +1,771 @@
+/* ============================================
+   EVENTS MODULE - POLISHED UI/UX
+   Production-Ready Design System
+   ============================================ */
+
+:root {
+  /* Core AlumniHub Color Palette */
+  --ink-black: #0d1b2a;
+  --prussian-blue: #1b263b;
+  --dusk-blue: #415a77;
+  --dusty-denim: #778da9;
+  --alabaster-grey: #e0e1dd;
+  
+  /* Blue-Tinted Design System */
+  --blue-tint-lightest: #f5f7fa;
+  --blue-tint-light: #edf2f7;
+  --blue-tint-medium: #e3eaf2;
+  --blue-surface: rgba(65, 90, 119, 0.04);
+  --blue-surface-hover: rgba(65, 90, 119, 0.08);
+  
+  /* Status Colors - Muted & Professional */
+  --status-pending: #d97706;
+  --status-pending-bg: #fef3c7;
+  --status-approved: #059669;
+  --status-approved-bg: #d1fae5;
+  --status-completed: #6b7280;
+  --status-completed-bg: #f3f4f6;
+  
+  /* Elevation & Shadows - Blue-Tinted */
+  --shadow-xs: 0 1px 2px rgba(27, 38, 59, 0.04);
+  --shadow-sm: 0 2px 4px rgba(27, 38, 59, 0.06);
+  --shadow-md: 0 4px 8px rgba(27, 38, 59, 0.08);
+  --shadow-lg: 0 8px 16px rgba(27, 38, 59, 0.12);
+  
+  /* Transitions - Smooth & Professional */
+  --transition-fast: all 0.2s ease;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Spacing Scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+}
+
+/* ============================================
+   CONTAINER & LAYOUT
+   ============================================ */
+
+.events-container {
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  background: #e8ecf1;
+  min-height: 100vh;
+}
+
+/* ============================================
+   HEADER SECTION - Enhanced Hierarchy
+   ============================================ */
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, #1b263b 0%, #243447 100%);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(13, 27, 42, 0.15);
+}
+
+.header-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.page-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.0625rem;
+  color: rgba(224, 225, 221, 0.9);
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.role-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.role-switcher label {
+  font-size: 0.8125rem;
+  color: var(--dusk-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.role-switcher select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid rgba(119, 141, 169, 0.2);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink-black);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.role-switcher select:hover {
+  border-color: var(--dusk-blue);
+  background: rgba(237, 242, 247, 0.6);
+}
+
+.role-switcher select:focus {
+  border-color: var(--prussian-blue);
+  box-shadow: 0 0 0 3px rgba(27, 38, 59, 0.1);
+}
+
+.btn-create-event {
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: var(--prussian-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  letter-spacing: 0.01em;
+}
+
+.btn-create-event:hover {
+  background: var(--ink-black);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-create-event:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   ERROR BANNER - Calm & Professional
+   ============================================ */
+
+.error-banner {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: #fef2f2;
+  border-left: 3px solid #ef4444;
+  border-radius: 8px;
+  margin-bottom: var(--spacing-lg);
+  color: #991b1b;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  box-shadow: var(--shadow-xs);
+}
+
+/* ============================================
+   ANALYTICS SECTION - Refined Cards
+   ============================================ */
+
+.analytics-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background: rgba(65, 90, 119, 0.04);
+  border-radius: 16px;
+  border: none;
+}
+
+.analytics-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(27, 38, 59, 0.08);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(65, 90, 119, 0.1);
+}
+
+.analytics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 38, 59, 0.12);
+  border-color: rgba(65, 90, 119, 0.2);
+}
+
+.analytics-icon {
+  font-size: 2.25rem;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(27, 38, 59, 0.08), rgba(65, 90, 119, 0.12));
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.analytics-content {
+  flex: 1;
+}
+
+.analytics-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--ink-black);
+  margin: 0 0 var(--spacing-xs) 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.analytics-label {
+  font-size: 0.8125rem;
+  color: var(--dusty-denim);
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   CONTROLS SECTION - Clean Search & Filters
+   ============================================ */
+
+.controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  padding: var(--spacing-lg);
+  background: rgba(65, 90, 119, 0.04);
+  border-radius: 12px;
+  border: none;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(27, 38, 59, 0.06);
+  border: 1px solid rgba(65, 90, 119, 0.12);
+  flex: 1;
+  min-width: 280px;
+  max-width: 420px;
+  transition: var(--transition-fast);
+}
+
+.search-box:focus-within {
+  border-color: var(--dusk-blue);
+  box-shadow: 0 0 0 3px rgba(65, 90, 119, 0.1), var(--shadow-md);
+  background: white;
+}
+
+.search-icon {
+  font-size: 1.125rem;
+  color: var(--dusty-denim);
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9375rem;
+  color: var(--ink-black);
+  background: transparent;
+  font-weight: 400;
+}
+
+.search-input::placeholder {
+  color: var(--dusty-denim);
+  opacity: 0.8;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: white;
+  color: var(--dusk-blue);
+  border: 1px solid rgba(65, 90, 119, 0.15);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(27, 38, 59, 0.04);
+  letter-spacing: 0.01em;
+}
+
+.filter-btn:hover {
+  background: rgba(237, 242, 247, 0.9);
+  border-color: var(--dusk-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(27, 38, 59, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--prussian-blue);
+  color: white;
+  border-color: var(--prussian-blue);
+  box-shadow: 0 2px 6px rgba(27, 38, 59, 0.2);
+}
+
+/* ============================================
+   EVENTS LIST
+   ============================================ */
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  background: rgba(65, 90, 119, 0.04);
+  border-radius: 16px;
+  border: none;
+}
+
+/* ============================================
+   EVENT CARD - Premium Design
+   ============================================ */
+
+.event-card {
+  background: rgba(7, 7, 56, 0.08);
+  border-radius: 14px;
+  padding: var(--spacing-xl);
+  box-shadow: 0 2px 8px rgba(27, 38, 59, 0.08);
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(7, 7, 56, 0.15);
+  border-left: 4px solid var(--prussian-blue);
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 38, 59, 0.12);
+  border-left-color: var(--ink-black);
+  border-color: rgba(7, 7, 56, 0.2);
+  background: rgba(7, 7, 56, 0.12);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.event-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin: 0;
+  flex: 1;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Status Badge - Refined Pill Design */
+.status-badge {
+  padding: 0.375rem 0.875rem;
+  border-radius: 24px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.status-pending {
+  background: var(--status-pending-bg);
+  color: #78350f;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.status-approved {
+  background: var(--status-approved-bg);
+  color: #064e3b;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.status-completed {
+  background: var(--status-completed-bg);
+  color: #374151;
+  border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+/* Event Meta Information - Clear Hierarchy */
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(65, 90, 119, 0.08);
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--dusk-blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.meta-icon {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.event-description {
+  color: var(--dusk-blue);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  font-size: 0.9375rem;
+}
+
+/* Event Actions - Well Spaced */
+.event-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding-top: var(--spacing-sm);
+}
+
+/* RSVP Actions (Student) - Cohesive Buttons */
+.rsvp-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.btn-rsvp {
+  padding: 0.625rem var(--spacing-lg);
+  background: white;
+  color: var(--dusk-blue);
+  border: 1px solid rgba(65, 90, 119, 0.25);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.btn-rsvp:hover {
+  background: rgba(224, 225, 221, 0.4);
+  border-color: var(--dusk-blue);
+  transform: translateY(-1px);
+}
+
+.btn-rsvp.active {
+  background: var(--prussian-blue);
+  color: white;
+  border-color: var(--prussian-blue);
+  box-shadow: var(--shadow-xs);
+}
+
+.event-completed-message {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: rgba(243, 244, 246, 0.7);
+  color: var(--status-completed);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(107, 114, 128, 0.15);
+}
+
+/* Admin Actions - Clear & Decisive */
+.admin-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-approve {
+  padding: 0.625rem var(--spacing-xl);
+  background: var(--status-approved);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+  letter-spacing: 0.01em;
+}
+
+.btn-approve:hover {
+  background: #047857;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-approve:active {
+  transform: translateY(0);
+}
+
+.btn-reject {
+  padding: 0.625rem var(--spacing-xl);
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+  letter-spacing: 0.01em;
+}
+
+.btn-reject:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-reject:active {
+  transform: translateY(0);
+}
+
+/* View Details Button (Alumni) - Subtle CTA */
+.btn-details {
+  padding: 0.625rem var(--spacing-xl);
+  background: var(--dusk-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+  letter-spacing: 0.01em;
+}
+
+.btn-details:hover {
+  background: var(--prussian-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-details:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   EMPTY STATE - Calm & Informative
+   ============================================ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(27, 38, 59, 0.08);
+  border: 1px solid rgba(65, 90, 119, 0.12);
+}
+
+.empty-state-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.4;
+  filter: grayscale(20%);
+}
+
+.empty-state-message {
+  font-size: 1rem;
+  color: var(--dusty-denim);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ============================================
+   ERROR STATE - Professional Warning
+   ============================================ */
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  background: rgba(254, 242, 242, 0.3);
+}
+
+.error-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.8;
+}
+
+.error-message {
+  font-size: 1rem;
+  color: #991b1b;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - Mobile Optimized
+   ============================================ */
+
+@media (max-width: 768px) {
+  .events-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .events-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .controls-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .analytics-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .analytics-card {
+    padding: var(--spacing-lg);
+  }
+
+  .event-card {
+    padding: var(--spacing-lg);
+  }
+
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .event-title {
+    font-size: 1.25rem;
+  }
+
+  .event-meta {
+    gap: var(--spacing-md);
+  }
+
+  .event-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .rsvp-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-rsvp {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .admin-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-approve,
+  .btn-reject,
+  .btn-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-container {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .page-title {
+    font-size: 1.875rem;
+  }
+
+  .analytics-value {
+    font-size: 1.75rem;
+  }
+
+  .analytics-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.875rem;
+  }
+
+  .event-title {
+    font-size: 1.125rem;
+  }
+
+  .event-description {
+    font-size: 0.875rem;
+  }
+
+  .filter-btn {
+    flex: 1;
+    min-width: calc(50% - var(--spacing-xs));
+  }
+}
