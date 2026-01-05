@@ -11,7 +11,7 @@ const Navbar = ({ showAuthButtons = true }) => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/events">Events</Link></li>
           <li><a href="#jobs">Jobs</a></li>
-          <li><a href="#donate">Donate</a></li>
+          <li><Link to="/donate ">Donate</Link></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>

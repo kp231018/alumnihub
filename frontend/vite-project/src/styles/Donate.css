@@ -1,0 +1,149 @@
+/* Same palette as Home/Login */
+:root {
+  --ink-black: #0d1b2a;
+  --prussian-blue: #1b263b;
+  --dusk-blue: #415a77;
+  --dusty-denim: #778da9;
+  --alabaster-grey: #e0e1dd;
+}
+
+/* Page background (same family as Home hero) */
+.donate-wrapper {
+  min-height: calc(100vh - 70px); /* navbar height */
+  background: linear-gradient(
+    135deg,
+    var(--prussian-blue),
+    var(--dusk-blue)
+  );
+  padding: 80px 20px;
+}
+
+
+/* Centered layout like Home */
+.donate-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+}
+
+/* Main donate card (matches Login card style) */
+.donate-card {
+  background: var(--prussian-blue);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.admin-panel {
+  background: var(--dusk-blue);
+  color: white;
+  border-radius: 18px;
+  padding: 28px;
+}
+.donate-title,
+.donate-subtitle {
+  color: var(--alabaster-grey);
+}
+
+
+/* Typography hierarchy */
+.donate-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 8px;
+}
+
+.donate-subtitle {
+  color: #5f6c7b;
+  margin-bottom: 28px;
+  font-size: 16px;
+}
+
+/* Admin panel looks secondary */
+.admin-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .donate-container {
+    grid-template-columns: 1fr;
+  }
+}
+.donate-toggle {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 14px;
+  padding: 6px;
+  margin-bottom: 28px;
+}
+
+.donate-toggle button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #334155;
+}
+
+.donate-toggle button.active {
+  background: var(--prussian-blue);
+  color: white;
+  font-weight: 600;
+}
+.admin-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: var(--alabaster-grey);
+}
+
+.input-group input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #f1f5f9;  /* LIGHT INPUT */
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus {
+  outline: 2px solid var(--dusty-denim);
+}
+.primary-btn {
+  margin-top: 18px;
+  padding: 14px;
+  background: var(--dusty-denim);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink-black);
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: var(--alabaster-grey);
+}
