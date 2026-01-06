@@ -1,3 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-black: #0d1b2a;
+  --color-prussian-blue: #1b263b;
+  --color-dusk-blue: #415a77;
+  --color-dusty-denim: #778da9;
+  --color-alabaster-grey: #e0e1dd;
+}
+
 /* Global Reset and Base Styles */
 * {
   margin: 0;
