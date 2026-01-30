@@ -235,7 +235,7 @@ export default function Donate() {
 
   return (
     <>
-      <Navbar />
+      <Navbar showAuthButtons={false} />
       <div className="donate-page-wrapper">
         <div className="donate-page-container">
           {/* Left Section - Impact */}

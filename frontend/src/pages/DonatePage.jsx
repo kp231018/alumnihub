@@ -11,7 +11,7 @@ export default function DonatePage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar showAuthButtons={false} />
 
       <div className="donate-wrapper">
         <div className="donate-container">

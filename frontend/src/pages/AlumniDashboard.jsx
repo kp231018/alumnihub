@@ -146,7 +146,7 @@ const AlumniDashboard = () => {
 
   return (
     <div className="alumni-dashboard">
-      <Navbar />
+      <Navbar showAuthButtons={false} />
       
       {/* Dashboard Hero Section */}
       <motion.section 

@@ -142,7 +142,7 @@ const StudentDashboard = () => {
 
   return (
     <div className="alumni-dashboard">
-      <Navbar />
+      <Navbar showAuthButtons={false} />
 
       {/* HERO SECTION - Same layout & styling as AlumniDashboard */}
       <motion.section
