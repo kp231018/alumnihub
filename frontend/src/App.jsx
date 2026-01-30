@@ -6,6 +6,7 @@ import Register from './pages/register'
 import Events from './pages/events'
 import AlumniDashboard from './pages/AlumniDashboard'
 import StudentDashboard from './pages/StudentDashboard'
+import { JobsListPage, JobDetailsPage } from './modules/jobs'
 import './styles/App.css'
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/events" element={<Events />} />
+        {/* Jobs Module Routes */}
+        <Route path="/jobs" element={<JobsListPage />} />
+        <Route path="/jobs/:id" element={<JobDetailsPage />} />
       </Routes>
     </Router>
   )

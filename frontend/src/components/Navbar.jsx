@@ -10,7 +10,7 @@ const Navbar = ({ showAuthButtons = true }) => {
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/events">Events</Link></li>
-          <li><a href="#jobs">Jobs</a></li>
+          <li><Link to="/jobs">Jobs</Link></li>
           <li><Link to="/donate ">Donate</Link></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
